@@ -1,0 +1,24 @@
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#                         DO NOT USE IN PRODUCTION!
+#                    DO NOT COMMIT INTO VERSION CONTROL!
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+mssql:
+  host: 0.0.0.0
+  port: 1433
+  user: user
+  password: password
+  database: database
+
+server:
+  shost: 0.0.0.0
+  sport: 9999
+  echo:
+    debug: true
+    EnableCORSMiddleware: true
+    EnableLoggerMiddleware: true
+    EnableRecoverMiddleware: true
+    EnableRequestIDMiddleware: true
+    EnableTrailingSlashMiddleware: true
+    EnableSecureMiddleware: true
+    EnableCacheControlMiddleware: true
