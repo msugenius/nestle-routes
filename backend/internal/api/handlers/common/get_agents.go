@@ -12,7 +12,7 @@ func GetAgents(s *api.Server) *echo.Route {
 }
 
 type agentsPayload struct {
-	Day    int    `query:"day"`
+	Days   []int  `query:"day"`
 	Region string `query:"region"`
 }
 
@@ -28,7 +28,7 @@ func getAgentsHandler(s *api.Server) echo.HandlerFunc {
 			return c.JSON(http.StatusInternalServerError, nil)
 		}
 
-		agents := s.Repository.SelectAgents(c.Request().Context(), payload.Region, payload.Day)
+		agents := s.Repository.SelectAgents(c.Request().Context(), payload.Region, payload.Days)
 		return c.JSON(http.StatusOK, agents)
 	}
 }
